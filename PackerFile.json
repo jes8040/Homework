@@ -1,5 +1,5 @@
 {
-
+ 
     "builders": [{
         "type": "docker",
         "image": "centos:latest",
@@ -9,17 +9,19 @@
             "EXPOSE 80"
         ]
     }],
-
+ 
     "provisioners": [
     {
         "type": "ansible",
         "user": "root",
         "playbook_file": "provision.yml"
     }],
-
+ 
     "post-processors": [[ {
         "type": "docker-tag",
         "repository": "docker.io/jes8040/homework",
         "tag": "latest"
-    } ]]
+    }, docker push
+     ]
+    ]
 }
