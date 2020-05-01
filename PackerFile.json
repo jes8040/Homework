@@ -21,7 +21,5 @@
         "type": "docker-tag",
         "repository": "docker.io/jes8040/homework",
         "tag": "latest"
-    },  "command": "docker push:"
-     ]
-    ]
+    } ]]
 }
