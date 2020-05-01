@@ -1,0 +1,25 @@
+{
+
+    "builders": [{
+        "type": "docker",
+        "image": "centos:latest",
+        "commit": true,
+        "changes": [
+            "ENTRYPOINT  /usr/sbin/nginx -g \"daemon off;\"",
+            "EXPOSE 80"
+        ]
+    }],
+
+    "provisioners": [
+    {
+        "type": "ansible",
+        "user": "root",
+        "playbook_file": "provision.yml"
+    }],
+
+    "post-processors": [[ {
+        "type": "docker-tag",
+        "repository": "docker.io/jes8040/homework",
+        "tag": "latest"
+    } ]]
+}
