@@ -5,7 +5,7 @@
         "image": "centos:latest",
         "commit": true,
         "changes": [
-            "ENTRYPOINT  /usr/sbin/nginx -g \"daemon off;\"",
+            "ENTRYPOINT  /usr/sbin/nginx",
             "EXPOSE 80"
         ]
     }],
@@ -21,5 +21,7 @@
         "type": "docker-tag",
         "repository": "docker.io/jes8040/homework",
         "tag": "latest"
-    } ]]
+    }, "docker-push"
+     ]]
 }
+
