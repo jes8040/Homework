@@ -17,3 +17,14 @@
         name:
           - nginx
         state: present
+
+    - name: Edit index.html
+      command: echo "Hello World" >> /usr/share/nginx/html/index.html
+
+    - name: Serve Hello World
+      copy:
+        src: files/index.html
+        dest: /usr/share/nginx/html/index.html
+        owner: root
+        group: root
+        mode: 0777
